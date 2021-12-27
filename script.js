@@ -1,6 +1,7 @@
 var p = document.querySelectorAll('p');
 var input = document.querySelector('input');
-var score =0;
+var score = 0;
+
 function values() {
   a = p[0].innerText = Math.trunc(Math.random() * 10);
 
@@ -28,7 +29,23 @@ input.oninput = function() {
   if (input.value == res) {
     input.value = '';
     score++;
-    document.querySelector('b').innerText=score;
+    document.querySelector('b').innerText = score;
     values();
   }
 }
+
+function restart() {
+  document.querySelector('b').innerText = 0;
+  input.style.display = 'block';
+
+}
+
+var timeleft = 60;
+var downloadTimer = setInterval(function() {
+  if (timeleft <= 0) {
+    clearInterval(downloadTimer);
+    input.style.display = 'none';
+  }
+  document.querySelector('i').innerText = timeleft;
+  timeleft -= 1;
+}, 1000);
