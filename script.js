@@ -34,18 +34,21 @@ input.oninput = function() {
   }
 }
 
+var time = document.querySelector('i');
+var timeleft = 4;
+var downloadTimer = setInterval(function() {
+  if (timeleft <= 0) {
+    time.style.display =
+    input.style.display = 'none';
+  }
+
+  time.innerText = timeleft;
+  timeleft -= 1;
+}, 1000);
+
 function restart() {
   document.querySelector('b').innerText = 0;
   input.style.display = 'block';
-
+  time.style.display = 'inline';
+  timeleft = 4;
 }
-
-var timeleft = 60;
-var downloadTimer = setInterval(function() {
-  if (timeleft <= 0) {
-    clearInterval(downloadTimer);
-    input.style.display = 'none';
-  }
-  document.querySelector('i').innerText = timeleft;
-  timeleft -= 1;
-}, 1000);
