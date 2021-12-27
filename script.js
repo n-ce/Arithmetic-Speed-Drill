@@ -35,7 +35,7 @@ input.oninput = function() {
 }
 
 var time = document.querySelector('i');
-var timeleft = 4;
+var timeleft = 60;
 var downloadTimer = setInterval(function() {
   if (timeleft <= 0) {
     time.style.display =
@@ -50,5 +50,5 @@ function restart() {
   document.querySelector('b').innerText = 0;
   input.style.display = 'block';
   time.style.display = 'inline';
-  timeleft = 4;
+  timeleft = 60;
 }
