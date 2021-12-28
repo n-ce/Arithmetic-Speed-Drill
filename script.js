@@ -2,34 +2,16 @@ var p = document.querySelectorAll('p');
 var input = document.querySelector('input');
 var button = document.querySelectorAll('button');
 var score = 0;
-var d = 10;
-button[2].style.color='white';
-button[3].style.color=
-button[4].style.color = 'lightgreen';
-button[2].onclick = function(){
-  d = 10;
- button[2].style.color='white';
-  button[3].style.color =
-    button[4].style.color = 'lightgreen';
-  restart();
-  values();
+
+function difficulty(a,b,c){
+  d=Math.pow(10,(a-1));
+button[a].style.color='lightgreen';
+button[b].style.color=
+button[c].style.color = 'darkgreen';
+restart();
+values();
 }
-button[3].onclick = function() {
-  button[3].style.color='white';
-  button[2].style.color =
-    button[4].style.color = 'lightgreen';
-  d = 100;
-  restart();
-  values();
-}
-button[4].onclick = function() {
-  button[4].style.color='white';
-  button[3].style.color =
-    button[2].style.color = 'lightgreen';
-  d = 1000;
-  restart();
-  values();
-}
+
 function values() {
   a = p[0].innerText = Math.trunc(Math.random() * d);
 
@@ -38,7 +20,7 @@ function values() {
   opindex = Math.trunc(Math.random() * 4);
   p[1].innerText = operation[opindex];
 }
-values();
+
 input.oninput = function() {
   switch (opindex) {
     case 0:
@@ -80,3 +62,4 @@ function restart() {
   time.style.display = 'inline';
   timeleft = 60;
 }
+difficulty(2,3,4);
