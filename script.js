@@ -29,12 +29,12 @@ input.oninput = function() {
   if (input.value == res) {
     input.value = '';
     score++;
-    document.querySelector('b').innerText = score;
+    document.querySelectorAll('b')[0].innerText = score;
     values();
   }
 }
 
-var time = document.querySelectorAll('i')[2];
+var time = document.querySelectorAll('b')[1];
 var timeleft = 60;
 var downloadTimer = setInterval(function() {
   if (timeleft <= 0) {

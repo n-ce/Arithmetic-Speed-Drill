@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 
 body {
   height: 90vh;
@@ -6,6 +6,7 @@ body {
   color: white;
   display:flex;
   margin:0;
+  font-family: 'Noto Sans', sans-serif;
   align-items: center;
   flex-direction:column;
 }
@@ -20,13 +21,12 @@ h3{
 }
 div{
   display:flex;
-  width: 85vw;
+  width: 90vw;
   justify-content: space-evenly;
   align-items: center;
 }
 #data{
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+  border-radius: 1rem;
   background-color: lightgreen;
   color: black;
 }
