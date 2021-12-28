@@ -5,19 +5,19 @@ var score = 0;
 var d = 10;
 button[2].style.color='white';
 button[3].style.color=
-button[4].style.color = 'darkgreen';
+button[4].style.color = 'lightgreen';
 button[2].onclick = function(){
   d = 10;
  button[2].style.color='white';
   button[3].style.color =
-    button[4].style.color = 'darkgreen';
+    button[4].style.color = 'lightgreen';
   restart();
   values();
 }
 button[3].onclick = function() {
   button[3].style.color='white';
   button[2].style.color =
-    button[4].style.color = 'darkgreen';
+    button[4].style.color = 'lightgreen';
   d = 100;
   restart();
   values();
@@ -25,7 +25,7 @@ button[3].onclick = function() {
 button[4].onclick = function() {
   button[4].style.color='white';
   button[3].style.color =
-    button[2].style.color = 'darkgreen';
+    button[2].style.color = 'lightgreen';
   d = 1000;
   restart();
   values();
