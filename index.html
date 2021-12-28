@@ -4,14 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="black">
+  <meta name="theme-color" content="#1f1f1f">
   <title>Arithmetic Speed Drill</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <h3>Arithmetic Speed Drill v1.2</h3>
+  <h3>Arithmetic Speed Drill v1.5</h3>
+  <div id="data">
   <em>Score: <b>0</b></em>
+  <button onclick="values()"><i class="fas fa-forward"></i></button>
+  <button onclick="restart()"><i class="fas fa-redo-alt"></i></button>
+  <em>Time Left: <i></i></em>
+  
+  </div>
   <div>
     <p></p>
     <p></p>
@@ -19,12 +26,10 @@
   </div>
   <div>
     
-  <button onclick="values()">skip</button>
-  <button onclick="restart()">restart</button>
   </div>
   <input type="number">
   <br>
-  <em>Time Left: <i>60</i></em>
+
   <script src="script.js"></script>
 </body>
 

@@ -1,11 +1,46 @@
+
+
 body {
   height: 90vh;
   background-color: black;
   color: white;
   display:flex;
-  justify-content: center;
+  margin:0;
   align-items: center;
   flex-direction:column;
 }
-div{display:flex}
+h3{
+  background-color: #1f1f1f;
+  width: 100vw;
+  height: 10vh;
+  margin-top: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+div{
+  display:flex;
+  width: 85vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#data{
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: lightgreen;
+  color: black;
+}
 p{font-size: 3rem;}
+input{
+  height: 10vh;
+  width: 90vw;
+  border-radius: 1rem;
+  border: none;
+  background-color: lightgreen;
+  text-align: center;
+}
+button{
+  border: none;
+background-color: transparent;
+  
+}

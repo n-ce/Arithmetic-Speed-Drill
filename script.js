@@ -34,7 +34,7 @@ input.oninput = function() {
   }
 }
 
-var time = document.querySelector('i');
+var time = document.querySelectorAll('i')[2];
 var timeleft = 60;
 var downloadTimer = setInterval(function() {
   if (timeleft <= 0) {
