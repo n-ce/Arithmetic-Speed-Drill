@@ -38,9 +38,9 @@ input{
   border: none;
   background-color: lightgreen;
   text-align: center;
+  font-size: 2rem;
 }
 button{
   border: none;
 background-color: transparent;
-  
 }
