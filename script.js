@@ -16,13 +16,14 @@ function values() {
   a = p[0].innerText = Math.trunc(Math.random() * d);
 
   b = p[2].innerText = Math.trunc(Math.random() * d);
+  while (b == 0) { values(); }
   operation = ['+', '-', '*', '/'];
   opindex = Math.trunc(Math.random() * 4);
   p[1].innerText = operation[opindex];
+  while (opindex == 3 && (a / b) - Math.trunc(a / b) > 0) { values(); }
 }
 
 input.oninput = function() {
-
   switch (opindex) {
     case 0:
       res = a + b;
@@ -33,9 +34,10 @@ input.oninput = function() {
     case 2:
       res = a * b;
       break;
-    case 3:
+    case 3: {
       res = a / b;
-      break;
+    }
+    break;
   }
   if (input.value == res) {
     input.value = '';
@@ -66,6 +68,6 @@ function restart() {
   timeleft = 60;
 }
 
-document.querySelectorAll('div')[1].onclick = function() {
+document.querySelectorAll('p')[1].onclick = function() {
   difficulty(2, 3, 4);
 }
