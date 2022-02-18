@@ -24,14 +24,14 @@ h3 {
   align-items: center;
 }
 
-div {
+div,span {
   display: flex;
   width: 90vw;
   justify-content: space-evenly;
   align-items: center;
 }
 
-#data {
+span {
   border-radius: 1rem;
   background-color: lightgreen;
   color: black;

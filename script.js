@@ -1,20 +1,21 @@
-var p = document.querySelectorAll('p');
-var input = document.querySelector('input');
-var button = document.querySelectorAll('button');
-var score = 0;
+const btn = document.querySelectorAll('button');
+const bx = document.querySelectorAll('b');
+const input = document.querySelector('input');
+const p = document.querySelectorAll('p');
+let timeleft = 0;
+let score = 0;
 
 function difficulty(a, b, c) {
   d = Math.pow(10, (a - 1));
-  button[a].style.color = 'lightgreen';
-  button[b].style.color =
-    button[c].style.color = 'darkgreen';
+  btn[a].style.color = 'lightgreen';
+  btn[b].style.color =
+    btn[c].style.color = 'darkgreen';
   restart();
   values();
 }
 
 function values() {
   a = p[0].innerText = Math.trunc(Math.random() * d);
-
   b = p[2].innerText = Math.trunc(Math.random() * d);
   while (b == 0) { values(); }
   operation = ['+', '-', '*', '/'];
@@ -23,7 +24,7 @@ function values() {
   while (opindex == 3 && (a / b) - Math.trunc(a / b) > 0) { values(); }
 }
 
-input.oninput = function() {
+input.oninput = () => {
   switch (opindex) {
     case 0:
       res = a + b;
@@ -42,32 +43,23 @@ input.oninput = function() {
   if (input.value == res) {
     input.value = '';
     score++;
-    document.querySelectorAll('b')[0].innerText = score;
+    bx[0].innerText = score;
     values();
   }
-
 }
 
-var time = document.querySelectorAll('b')[1];
-var timeleft = 0;
-var downloadTimer = setInterval(function() {
-
+setInterval(()=> {
   if (timeleft <= 0) {
-    time.style.display =
+    bx[1].style.display =
       input.style.display = 'none';
   }
-
-  time.innerText = timeleft;
+  bx[1].innerText = timeleft;
   timeleft -= 1;
 }, 1000);
 
 function restart() {
-  document.querySelector('b').innerText = 0;
+  bx[0].innerText = 0;
   input.style.display = 'block';
-  time.style.display = 'inline';
+  bx[1].style.display = 'inline';
   timeleft = 60;
-}
-
-document.querySelectorAll('p')[1].onclick = function() {
-  difficulty(2, 3, 4);
 }
