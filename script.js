@@ -2,8 +2,18 @@ const btn = document.querySelectorAll('button');
 const bx = document.querySelectorAll('b');
 const input = document.querySelector('input');
 const p = document.querySelectorAll('p');
+const list = document.querySelector('ol');
+const store = localStorage.getItem('scoreboard');
+
 let timeleft = 0;
 let score = 0;
+
+if (store != null) {
+  list.innerHTML = store;
+}
+else {
+  document.querySelector('section').style.display = 'none';
+}
 
 function difficulty(a, b, c) {
   d = Math.pow(10, (a - 1));
@@ -48,7 +58,7 @@ input.oninput = () => {
   }
 }
 
-setInterval(()=> {
+setInterval(() => {
   if (timeleft <= 0) {
     bx[1].style.display =
       input.style.display = 'none';
@@ -58,8 +68,17 @@ setInterval(()=> {
 }, 1000);
 
 function restart() {
+  if (score > 0) {
+    document.querySelector('section').style.display = 'block';
+    const node = document.createElement("li");
+    node.appendChild(document.createTextNode(score));
+    document.querySelector('ol').appendChild(node);
+    localStorage.setItem('scoreboard', document.querySelector('ol').innerHTML);
+  }
+  score = 0;
   bx[0].innerText = 0;
   input.style.display = 'block';
   bx[1].style.display = 'inline';
   timeleft = 60;
+  values();
 }

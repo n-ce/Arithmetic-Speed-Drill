@@ -71,3 +71,6 @@ input::placeholder {
 a {
   color: white;
 }
+section{
+  overflow: scroll;
+}
